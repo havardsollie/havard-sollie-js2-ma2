@@ -1,6 +1,6 @@
 import books from "./data/bookList.js";
 
-let container = document.querySelector(".book-container");
+const container = document.querySelector(".book-container");
 
 for (let i = 0; i < books.length; i++) {
     
