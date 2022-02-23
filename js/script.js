@@ -34,9 +34,11 @@ for (let i = 0; i < books.length; i++) {
 
     function createList() {
     
-        container.innerHTML += `<span><p>${isbn}</p><h4 style="color:${colour}">${title}</h4><i class="fa-solid fa-trash" data-item="${isbn}"></span>` 
+        container.innerHTML += `<div>
+        <p>${isbn}</p><h4 style="color:${colour}">${title}</h4><button class="btn" data-item="${isbn}">
+        </div>` 
         
-        const trashCan = document.querySelectorAll("span i");
+        const trashCan = document.querySelectorAll("button");
 
         trashCan.forEach(function(can) {
             can.addEventListener("click", removeFromList);
@@ -46,24 +48,27 @@ for (let i = 0; i < books.length; i++) {
 
 createList();
 
-}
+
 
 
 function removeFromList(event) {
-    const deleteThisItem = event.target.dataset.item;
+    const itemToRemove = event.target.dataset.item;
 
-    const newList = books.filter(function(item) {
-        if(deleteThisItem !== item) {
+    const newList = books.filter(function() {
+        if(itemToRemove !== isbn) {
             return true;
         }
     })
     
     console.log(event.target.dataset.item);
-    console.log(newList)
+    console.log(newList);
+    console.log(itemToRemove, isbn);
     
     books = newList;
 
     createList();
+
+}
 
 }
 
