@@ -31,9 +31,10 @@ for (let i = 0; i < books.length; i++) {
     let colour = books[i].colour;
 
 
+
     function createList() {
     
-        container.innerHTML += `<span> <p>${isbn}</p> <h4 style="color: ${colour}">${title}</h4><i class="fa-solid fa-trash" data-item="${isbn}"></span>` 
+        container.innerHTML += `<span><p>${isbn}</p><h4 style="color:${colour}">${title}</h4><i class="fa-solid fa-trash" data-item="${isbn}"></span>` 
         
         const trashCan = document.querySelectorAll("span i");
 
@@ -42,25 +43,29 @@ for (let i = 0; i < books.length; i++) {
         })
 }
 
+
 createList();
 
-function removeFromList(event) {
-    let deleteThisItem = event.target.dataset.isbn;
 
-    let newList = books.filter(function(isbn) {
-        if(deleteThisItem !== isbn) {
+
+
+function removeFromList(event) {
+    const deleteThisItem = event.target.dataset.item;
+
+    const newList = books.filter(function(item) {
+        if(deleteThisItem !== item) {
             return true;
         }
     })
-
-    console.log(event);
+    
+    console.log(event.target.dataset.item);
     console.log(newList)
     
     books = newList;
 
-    createList()
-}
+    createList();
 
 }
 
+}
 
