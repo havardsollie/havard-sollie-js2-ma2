@@ -46,7 +46,7 @@ for (let i = 0; i < books.length; i++) {
 
 createList();
 
-
+}
 
 
 function removeFromList(event) {
@@ -67,5 +67,5 @@ function removeFromList(event) {
 
 }
 
-}
+
 
