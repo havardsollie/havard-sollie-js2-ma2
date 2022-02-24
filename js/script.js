@@ -21,7 +21,6 @@ let books = [
     },
 ];
 
-
 const container = document.querySelector("ul");
 
 function createList() {
@@ -30,7 +29,7 @@ function createList() {
       let title = books[i].title;
       let colour = books[i].colour;
       container.innerHTML += `<li>
-          <p>ISBN: ${isbn}</p><h4 style="color:${colour}">${title}</h4><button class="btn" data-item="${isbn}">
+          <p>ISBN: ${isbn}</p><h4 style="color:${colour}">${title}</h4><button class="btn" data-item="${isbn}">Remove me
           </li>` 
     }
 
@@ -52,10 +51,10 @@ function removeFromList(event) {
     const newList = books.filter(function(book) {
         return book.isbn !== itemToRemove;
     })
-    
-    console.log(event.target.dataset.item);
-    console.log(newList);
-    console.log(itemToRemove);
+
+    if (newList.length === 0) {
+        container.innerHTML = `<div class="empty"><p>No more books in this list!</p></div>`
+    }1
     
     books = newList;
 
