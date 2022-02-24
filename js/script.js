@@ -34,9 +34,9 @@ for (let i = 0; i < books.length; i++) {
 
     function createList() {
     
-        container.innerHTML += `<div>
+        container.innerHTML += `
         <p>${isbn}</p><h4 style="color:${colour}">${title}</h4><button class="btn" data-item="${isbn}">
-        </div>` 
+        ` 
         
         const trashCan = document.querySelectorAll("button");
 
@@ -54,10 +54,8 @@ createList();
 function removeFromList(event) {
     const itemToRemove = event.target.dataset.item;
 
-    const newList = books.filter(function(isbn) {
-        if(itemToRemove !== isbn) {
-            return true;
-        }
+    const newList = books.filter(function(book) {
+        return book.isbn = itemToRemove;
     })
     
     console.log(event.target.dataset.item);
