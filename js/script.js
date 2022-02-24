@@ -55,7 +55,7 @@ function removeFromList(event) {
     const itemToRemove = event.target.dataset.item;
 
     const newList = books.filter(function(book) {
-        return book.isbn = itemToRemove;
+        return book.isbn !== itemToRemove;
     })
     
     console.log(event.target.dataset.item);
