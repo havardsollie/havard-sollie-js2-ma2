@@ -61,6 +61,7 @@ function removeFromList(event) {
     })
     
     console.log(event.target.dataset.item);
+    console.log(isbn);
     console.log(newList);
     console.log(itemToRemove);
     
