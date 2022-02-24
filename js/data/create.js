@@ -28,7 +28,7 @@ function createBookList() {
         let isbn = item.isbn;
         container.innerHTML += `<li>
         <p>ISBN: ${isbn}</p><h4>${item}</h4><button class="btn" data-item="${isbn}">Remove me
-        </li>` 
+        </li>`
     });
 }
 
