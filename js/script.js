@@ -42,8 +42,6 @@ function createList() {
 
 createList();
 
-
-
 function removeFromList(event) {
     const itemToRemove = event.target.dataset.item;
     container.innerHTML = "";
@@ -55,12 +53,13 @@ function removeFromList(event) {
     if (newList.length === 0) {
         container.innerHTML = `<div class="empty"><p>No more books in this list!</p></div>`
     }
-    console.log(newList)
+    
     books = newList;
 
     createList(newList);
-
 }
+
+
 
 
 

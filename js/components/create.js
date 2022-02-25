@@ -14,10 +14,11 @@ function addToList() {
     const newBook = listInput.value.trim();
 
     if (newBook.length >= 1) {
-        listBooks.push(newBook);
+        const newItem = { isbn: Date.now(), title: newBook };
+        listInput.value = "";
+        listBooks.push(newItem);
         createBookList();
         saveToStorage(listBooks);
-        listInput.value = "";
     }
 }
 
